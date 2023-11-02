@@ -40,6 +40,7 @@ dependencies:
   carousel_slider: ^4.2.1
   dio: ^5.3.3
   rxdart: ^0.27.7
+  page_indicator: ^0.4.1
 
 dev_dependencies:
   flutter_test:

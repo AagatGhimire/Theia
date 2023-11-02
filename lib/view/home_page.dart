@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:theia/logic/components/now_playing_component.dart';
 import 'package:theia/theme/theme_bloc.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
         // button to change theme
-        actions: [
+        actions: <Widget>[
           BlocBuilder<ThemeBloc, ThemeMode>(
             builder: (context, state) {
               final isDark = state == ThemeMode.dark;
@@ -35,7 +36,16 @@ class _HomePageState extends State<HomePage> {
                     : const Icon(Icons.brightness_4), // Dark theme icon
               );
             },
-          )
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
+          ),
+        ],
+      ),
+      body: ListView(
+        children: <Widget>[
+          NowPlaying(),
         ],
       ),
     );

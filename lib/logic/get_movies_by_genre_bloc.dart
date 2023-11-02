@@ -22,6 +22,7 @@ class MovieListByGenreBloc {
     await _subject.drain();
   }
 
+  // subclasses that override dispose should call super.dispose() for proper cleanup
   @mustCallSuper
   void dispose() async {
     await _subject.drain(); // clear subject stream

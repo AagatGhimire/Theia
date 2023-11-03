@@ -45,13 +45,13 @@ class _GenresListComponentState extends State<GenresListComponent>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 307.0,
       child: DefaultTabController(
         length: genres.length,
         child: Scaffold(
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(50.0),
+            preferredSize: const Size.fromHeight(50.0),
             child: AppBar(
               bottom: TabBar(
                 controller: _tabController,

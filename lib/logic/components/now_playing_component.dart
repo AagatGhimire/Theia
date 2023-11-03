@@ -125,7 +125,13 @@ class _NowPlayingState extends State<NowPlaying> {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                  MovieDetailScreen(movie: movies[index]);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          MovieDetailScreen(movie: movies[index]),
+                    ),
+                  );
                 },
                 child: Stack(
                   children: <Widget>[

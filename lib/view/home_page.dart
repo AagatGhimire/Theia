@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theia/logic/components/genres_component.dart';
 import 'package:theia/logic/components/now_playing_component.dart';
+import 'package:theia/logic/components/top_movies.dart';
 import 'package:theia/theme/theme_bloc.dart';
 
 class HomePage extends StatefulWidget {
@@ -45,9 +46,10 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: ListView(
-        children: <Widget>[
+        children: const <Widget>[
           NowPlaying(),
           GenresComponent(),
+          TopMovies(),
         ],
       ),
     );

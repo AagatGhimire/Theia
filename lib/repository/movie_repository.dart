@@ -83,7 +83,7 @@ class MovieRepository {
           await _dio.get("$getMoviesUrl/$id", queryParameters: params);
       return MovieDetailResponse.fromJson(response.data);
     } on Exception catch (e) {
-      print('Error in fetching genres: $e');
+      print('Error in fetching detail: $e');
       return MovieDetailResponse.withError('$e');
     }
   }

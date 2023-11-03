@@ -210,10 +210,11 @@ Widget _buildMovieByGenreWidget(context, MovieResponse data) {
                           half: Icon(
                             Icons.star,
                             color: Colors.amber.shade600,
+                            // color: Colors.pink,
                           ),
                           empty: Icon(
                             Icons.star,
-                            color: Colors.amber.shade600,
+                            // color: Colors.amber.shade600,
                           ),
                         ),
                         initialRating: (movies[index].rating) / 2,

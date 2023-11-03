@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theia/logic/components/genres_component.dart';
 import 'package:theia/logic/components/now_playing_component.dart';
+import 'package:theia/logic/components/search_movie_by_title.dart';
 import 'package:theia/logic/components/top_movies.dart';
 import 'package:theia/theme/theme_bloc.dart';
 
@@ -40,7 +41,13 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          const SearchMovieByTitleComponent()));
+            },
             icon: const Icon(Icons.search),
           ),
         ],

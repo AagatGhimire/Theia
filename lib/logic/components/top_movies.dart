@@ -199,10 +199,11 @@ class _TopMoviesState extends State<TopMovies> {
                             half: Icon(
                               Icons.star,
                               color: Colors.amber.shade600,
+                              // color: Colors.pink,
                             ),
                             empty: Icon(
                               Icons.star,
-                              color: Colors.amber.shade600,
+                              // color: Colors.amber.shade600,
                             ),
                           ),
                           itemSize: 8.0,

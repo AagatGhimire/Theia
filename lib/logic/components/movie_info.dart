@@ -93,10 +93,10 @@ class _MovieInfoState extends State<MovieInfo> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              const Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     'Budget',
                     style: TextStyle(
                       // color: ,
@@ -104,16 +104,16 @@ class _MovieInfoState extends State<MovieInfo> {
                       fontSize: 12.0,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10.0,
                   ),
-                  // Text(
-                  //   "${detail.}min",
-                  //   style: const TextStyle(
-                  //       // color: ,
-                  //       fontWeight: FontWeight.bold,
-                  //       fontSize: 12.0),
-                  // ),
+                  Text(
+                    "\$ ${detail.budget}",
+                    style: const TextStyle(
+                        // color: ,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.0),
+                  ),
                 ],
               ),
               Column(
@@ -199,7 +199,7 @@ class _MovieInfoState extends State<MovieInfo> {
                           ),
                           border: Border.all(
                             width: 1.0,
-                            color: Colors.white,
+                            // color: Colors.white,
                           ),
                         ),
                         child: Text(
@@ -207,7 +207,7 @@ class _MovieInfoState extends State<MovieInfo> {
                           maxLines: 2,
                           style: const TextStyle(
                               height: 1.4,
-                              color: Colors.white,
+                              // color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 9.0),
                         ),

@@ -6,6 +6,7 @@ class MovieDetail {
   final List<Genre>? genres;
   final String? releaseDate;
   final int? runTime;
+  final int? budget;
 
   MovieDetail(
     this.id,
@@ -13,6 +14,7 @@ class MovieDetail {
     this.genres,
     this.releaseDate,
     this.runTime,
+    this.budget,
   );
 
   MovieDetail.fromJson(Map<String, dynamic> json)
@@ -22,5 +24,6 @@ class MovieDetail {
             .map((genre) => Genre.fromJson(genre))
             .toList(),
         releaseDate = json['release_date'],
-        runTime = json['runtime'];
+        runTime = json['runtime'],
+        budget = json['budget'];
 }

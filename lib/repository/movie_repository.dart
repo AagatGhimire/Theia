@@ -8,10 +8,12 @@ class MovieRepository {
   final String apiKey = myApiKey;
   static String mainUrl = 'https://api.themoviedb.org/3';
   final Dio _dio = Dio();
-  var getMoviesUrl = '$mainUrl/discover/movie';
+  var getDiscoverMoviesUrl = '$mainUrl/discover/movie';
   var getTopRatedMoviesUrl = '$mainUrl/movie/top_rated';
   var getNowPlayingMoviesUrl = '$mainUrl/movie/now_playing';
   var getGenresUrl = '$mainUrl/genre/movie/list';
+  var getMovieUrl = '$mainUrl/movie';
+  var getMovieByTitle = '$mainUrl/search/movie';
 
   Future<MovieResponse> getMovies() async {
     var params = {
@@ -54,7 +56,8 @@ class MovieRepository {
       'with_genres': id,
     };
     try {
-      Response response = await _dio.get(getMoviesUrl, queryParameters: params);
+      Response response =
+          await _dio.get(getDiscoverMoviesUrl, queryParameters: params);
       return MovieResponse.fromJson(response.data);
     } on Exception catch (e) {
       print('Error in fetching movies by genre: $e');
@@ -80,11 +83,39 @@ class MovieRepository {
     var params = {"api_key": apiKey, "language": "en-US"};
     try {
       Response response =
-          await _dio.get("$getMoviesUrl/$id", queryParameters: params);
+          await _dio.get("$getMovieUrl/$id", queryParameters: params);
       return MovieDetailResponse.fromJson(response.data);
     } on Exception catch (e) {
       print('Error in fetching detail: $e');
       return MovieDetailResponse.withError('$e');
+    }
+  }
+
+  Future<MovieResponse> searchMoviesByTitle(String title) async {
+    var params = {
+      'api_key': apiKey,
+      'language': 'en-US',
+      'query': title,
+      // 'page': 1,
+      // 'include_adult': false,
+    };
+    // var options = Options(
+    //   headers: {
+    //     'Authorization': 'Bearer $apiKey',
+    //     'accept': 'application/json',
+    //   },
+    // );
+    try {
+      Response response = await _dio.get(
+        getMovieByTitle,
+        queryParameters: params,
+        // options: options,
+      );
+      print('Search response:$response');
+      return MovieResponse.fromJson(response.data);
+    } on Exception catch (e) {
+      print('Error in searching movies: $e');
+      return MovieResponse.withError('$e');
     }
   }
 }

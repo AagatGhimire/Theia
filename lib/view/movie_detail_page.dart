@@ -93,10 +93,11 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                       half: Icon(
                         Icons.star,
                         color: Colors.amber.shade600,
+                        // color: Colors.pink,
                       ),
                       empty: Icon(
                         Icons.star,
-                        color: Colors.amber.shade600,
+                        // color: Colors.amber.shade600,
                       ),
                     ),
                     minRating: 1,

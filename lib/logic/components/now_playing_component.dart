@@ -4,6 +4,7 @@ import 'package:theia/logic/bloc/get_now_playing_movie_bloc.dart';
 import 'package:theia/services/movie.dart';
 
 import 'package:theia/services/movie_response.dart';
+import 'package:theia/view/movie_detail_page.dart';
 
 class NowPlaying extends StatefulWidget {
   const NowPlaying({super.key});
@@ -123,7 +124,9 @@ class _NowPlayingState extends State<NowPlaying> {
             itemCount: movies.take(5).length,
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  MovieDetailScreen(movie: movies[index]);
+                },
                 child: Stack(
                   children: <Widget>[
                     Hero(
